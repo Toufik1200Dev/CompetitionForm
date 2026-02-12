@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read/write access to athletes collection
+    match /athletes/{document=**} {
+      allow read, write: if true;
+    }
+    
+    // Allow read/write access to regional_registrations collection
+    match /regional_registrations/{document=**} {
+      allow read, write: if true;
+    }
+    
+    // Allow read/write access to national_championship_registrations collection
+    match /national_championship_registrations/{document=**} {
+      allow read, write: if true;
+    }
+    
+    // Allow read access to settings collection (for registration status)
+    // Write access allowed for admin panel to update settings
+    match /settings/{document=**} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}

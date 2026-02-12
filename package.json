@@ -1,0 +1,13 @@
+{
+  "name": "calisthenics-competition-form",
+  "version": "1.0.0",
+  "description": "Sports competition registration system for calisthenics athletes in Algeria",
+  "scripts": {
+    "start": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "install-all": "cd frontend && npm install"
+  },
+  "keywords": ["calisthenics", "competition", "registration"],
+  "author": "",
+  "license": "ISC"
+}
