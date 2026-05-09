@@ -15,6 +15,7 @@ import {
 } from '../utils/competitionCategories';
 import { getAllWilayas, getCompetitionDate, hasDateConflict, getConflictingWilayas, competitionSchedule } from '../data/competitionSchedule';
 import { getCompetitionDetails } from '../data/competitionDetails';
+import { WILAYAS } from '../data/wilayas';
 import logo1 from '../imgs/logo1.png';
 import sportpourtoutes from '../imgs/sportpourtouteLOGO.png';
 import nccLogo from '../imgs/nccNewlogo.png';
@@ -23,68 +24,6 @@ import './NationalChampionshipRegistration.css';
 // Registration period
 const REGISTRATION_START = new Date('2026-01-01');
 const REGISTRATION_END = new Date('2026-02-25');
-
-// All Algerian wilayas in Arabic, sorted by wilaya number
-const WILAYAS = [
-  { number: 1, name: "أدرار" },
-  { number: 2, name: "الشلف" },
-  { number: 3, name: "الأغواط" },
-  { number: 4, name: "أم البواقي" },
-  { number: 5, name: "باتنة" },
-  { number: 6, name: "بجاية" },
-  { number: 7, name: "بسكرة" },
-  { number: 8, name: "بشار" },
-  { number: 9, name: "البليدة" },
-  { number: 10, name: "البويرة" },
-  { number: 11, name: "تمنراست" },
-  { number: 12, name: "تبسة" },
-  { number: 13, name: "تلمسان" },
-  { number: 14, name: "تيارت" },
-  { number: 15, name: "تيزي وزو" },
-  { number: 16, name: "الجزائر العاصمة" },
-  { number: 17, name: "الجلفة" },
-  { number: 18, name: "جيجل" },
-  { number: 19, name: "سطيف" },
-  { number: 20, name: "سعيدة" },
-  { number: 21, name: "سكيكدة" },
-  { number: 22, name: "سيدي بلعباس" },
-  { number: 23, name: "عنابة" },
-  { number: 24, name: "قالمة" },
-  { number: 25, name: "قسنطينة" },
-  { number: 26, name: "المدية" },
-  { number: 27, name: "مستغانم" },
-  { number: 28, name: "المسيلة" },
-  { number: 29, name: "معسكر" },
-  { number: 30, name: "ورقلة" },
-  { number: 31, name: "وهران" },
-  { number: 32, name: "البيض" },
-  { number: 33, name: "إيليزي" },
-  { number: 34, name: "برج بوعريريج" },
-  { number: 35, name: "بومرداس" },
-  { number: 36, name: "الطارف" },
-  { number: 37, name: "تندوف" },
-  { number: 38, name: "تيسمسيلت" },
-  { number: 39, name: "الوادي" },
-  { number: 40, name: "خنشلة" },
-  { number: 41, name: "سوق أهراس" },
-  { number: 42, name: "تيبازة" },
-  { number: 43, name: "ميلة" },
-  { number: 44, name: "عين الدفلى" },
-  { number: 45, name: "النعامة" },
-  { number: 46, name: "عين تيموشنت" },
-  { number: 47, name: "غرداية" },
-  { number: 48, name: "غليزان" },
-  { number: 49, name: "تيميمون" },
-  { number: 50, name: "برج باجي مختار" },
-  { number: 51, name: "أولاد جلال" },
-  { number: 52, name: "بني عباس" },
-  { number: 53, name: "عين صالح" },
-  { number: 54, name: "عين قزام" },
-  { number: 55, name: "تقرت" },
-  { number: 56, name: "جانت" },
-  { number: 57, name: "المغير" },
-  { number: 58, name: "المنيعة" }
-].sort((a, b) => a.number - b.number); 
 
 const NationalChampionshipRegistration = () => {
   const [formData, setFormData] = useState({
